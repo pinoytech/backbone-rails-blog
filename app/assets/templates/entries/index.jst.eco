@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <h1>Blog</h1>
+  </div>
+  <div class="row">
+    <ul>
+      <% for entry in @entries.models: %>
+        <li><%= entry.get('title') %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
