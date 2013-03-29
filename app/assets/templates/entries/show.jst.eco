@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li><a href="/#">Index</a></li>
+      <li class="active"><a href="/#/entries/new">New</a></li>
+    </ul>
+  </div>
+  <div class="row">
+    <h1>Show Entry </h1>
+  </div>
+  <div class="row">
+    <h3><%= @entry.get('title') %></h3>
+    <p><%= @entry.get('body') %></p>
+  </div>
+</div>

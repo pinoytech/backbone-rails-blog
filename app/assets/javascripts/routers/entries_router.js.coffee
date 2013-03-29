@@ -2,9 +2,10 @@ class Blog.Routers.Entries extends Backbone.Router
   routes:
     '': 'index'
     'entries/new': 'new'
+    "entries/:id/edit" : "edit"
 
   initialize: ->
-    this.route /^entries\/(\d)+$/, "show_entry", this.show
+    this.route /^entries\/(\d+)$/, "show_entry", this.show
 
     @collection = new Blog.Collections.Entries()
     @collection.fetch()
@@ -17,5 +18,12 @@ class Blog.Routers.Entries extends Backbone.Router
     view = new Blog.Views.EntriesNew(collection: @collection)
     $('#container').html(view.render().el)
 
+  edit: (id) ->
+    model = @collection.get(id)
+    view = new Blog.Views.EntriesEdit(model: model)
+    $('#container').html(view.render().el)
+
   show: (id) ->
-    alert "Entry #{id}"
+    model = @collection.get(id)
+    view = new Blog.Views.EntriesShow({model: model})
+    $('#container').html(view.render().el)
