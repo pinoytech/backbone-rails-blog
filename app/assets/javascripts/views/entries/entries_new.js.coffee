@@ -11,7 +11,7 @@ class Blog.Views.EntriesNew extends Backbone.View
 
   render: ->
     $(@el).html(@template(entries: @collection))
-    this
+    @
 
   createEntry: (event) ->
     event.preventDefault()

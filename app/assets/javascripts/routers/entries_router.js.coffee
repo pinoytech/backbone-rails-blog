@@ -5,7 +5,7 @@ class Blog.Routers.Entries extends Backbone.Router
     "entries/:id/edit" : "edit"
 
   initialize: ->
-    this.route /^entries\/(\d+)$/, "show_entry", this.show
+    this.route /^entries\/(\d+)$/, "show_entry", @show
 
     @collection = new Blog.Collections.Entries()
     @collection.fetch()

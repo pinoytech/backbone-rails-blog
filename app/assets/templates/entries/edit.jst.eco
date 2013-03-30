@@ -9,7 +9,7 @@
     <h1>Edit Entry </h1>
   </div>
   <div class="row">
-    <form id="new_entry">
+    <form id="edit_entry">
       <label>Title</label>
       <input type="text" id="title_content" placeholder="Type something…" value="<%= @entry.get('title')%>">
       <label>Body</label>
