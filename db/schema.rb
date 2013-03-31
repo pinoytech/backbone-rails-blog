@@ -9,18 +9,20 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130318120127) do
+ActiveRecord::Schema.define(:version => 20130330180141) do
 
-  create_table "comments", force: true do |t|
-    t.string   "body"
+  create_table "comments", :force => true do |t|
+    t.string   "message"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "entry_id"
+    t.text     "name"
   end
 
-  create_table "entries", force: true do |t|
+  create_table "entries", :force => true do |t|
     t.string   "title"
     t.string   "body"
     t.integer  "user_id"

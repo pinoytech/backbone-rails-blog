@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :entry, :class_name => "Entry"
+  belongs_to :entry
+  attr_accessible :entry_id, :message, :user_id
 end

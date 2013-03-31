@@ -14,10 +14,12 @@ class Blog.Views.EntriesIndex extends Backbone.View
     this
 
   destroy: (event) ->
-    model = @collection.get(event.target.getAttribute('data-id'))
+    data_id = event.target.getAttribute('data-id')
+    model = @collection.get(data_id)
     model.destroy()
-    @getParentByTagName(event.target, 'tr').remove()
-    this
+    $('a[data-id="" + data_id + ""]').parents('tr').remove()
+#    @getParentByTagName(event.target, 'tr').remove()
+    @
 
   getParentByTagName: (obj, tag) ->
     obj_parent = obj.parentNode

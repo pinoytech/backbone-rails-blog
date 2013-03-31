@@ -25,5 +25,7 @@ class Blog.Routers.Entries extends Backbone.Router
 
   show: (id) ->
     model = @collection.get(id)
+    # model.comments.fetch()
     view = new Blog.Views.EntriesShow({model: model})
+    # view = new Blog.Views.EntriesShow({model: model, comments: model.comments})
     $('#container').html(view.render().el)

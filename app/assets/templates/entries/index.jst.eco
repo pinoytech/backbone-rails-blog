@@ -13,8 +13,8 @@
       <% for entry in @entries.models: %>
         <tr>
           <td><a href="/#/entries/<%=entry.get('id')%>"><%=entry.get('title')%></a></td>
-          <td><a href="/#/entries/<%= entry.get('id')%>/edit">Edit</a></td>
-          <td><a data-id="<%= entry.get('id')%>" class="destroy">Delete</a></td>
+          <td><a href="/#/entries/<%= entry.get('id')%>/edit" id="edit-<%=entry.get('id')%>">Edit</a></td>
+          <td><a data-id="<%= entry.get('id')%>" class="destroy" id="delete-<%=entry.get('id')%>">Delete</a></td>
         </tr>
       <% end %>
     </table>

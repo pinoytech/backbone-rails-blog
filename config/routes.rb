@@ -1,8 +1,11 @@
 Blog32::Application.routes.draw do
-  resources :comments
 
   scope "api" do
-    resources :entries
+    resources :comments
+
+    resources :entries do
+      resources :comments
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
